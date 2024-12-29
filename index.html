@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج التعرف على لغة الإشارة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>برنامج التعرف على لغة الإشارة</h1>
+
+        <div class="instructions">
+            <p>يمكنك الآن استخدام الكاميرا لاختيار إشارة يد والضغط على الأزرار للتفاعل.</p>
+        </div>
+
+        <div class="buttons">
+            <!-- زر السماح بالوصول إلى الكاميرا -->
+            <button id="btn-allow-camera">السماح بالوصول إلى الكاميرا</button>
+            <!-- الأزرار المتبقية لإظهار النتائج والتفاعل -->
+            <button id="btn-detect">التعرف على الحركة</button>
+            <button id="btn-extract">استخراج الحركة</button>
+            <button id="btn-convert-text">تحويل الحركة إلى نص عربي</button>
+            <button id="btn-convert-sign">تحويل النص العربي إلى حركات</button>
+        </div>
+
+        <label id="camera-status">حالة الكاميرا: مغلقة</label> <!-- عرض حالة الكاميرا -->
+        
+        <div id="output" class="output">
+            <p>النتيجة ستظهر هنا...</p>
+        </div>
+
+        <div class="video-container">
+            <!-- عنصر الفيديو لعرض كاميرا المستخدم -->
+            <video id="video" autoplay muted></video>
+        </div>
+    </div>
+
+    <!-- تحميل مكتبة Mediapipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1645416176/handtracking.js"></script>
+
+    <!-- تحميل مكتبة TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <!-- تحميل السكربت الخاص بالتفاعل مع الحركات -->
+    <script src="script.js"></script>
+</body>
+</html>
